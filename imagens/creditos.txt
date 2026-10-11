@@ -3,6 +3,8 @@ Imagens usadas nas paginas dos livros do Blog da Debora
 Imagens dos autores de 2o ano:
 - erico-verissimo-arquivo.png: Erico Verissimo na redacao de A Noite, Rio de Janeiro, 12 set. 1940. Jornal A Noite / Biblioteca Nacional Digital. Dominio publico. https://commons.wikimedia.org/wiki/File:Erico_verissimo.png
 - erico-verissimo-1961.jpg: Erico Verissimo em 1961. Arquivo fotografico / Wikimedia Commons. Dominio publico. https://commons.wikimedia.org/wiki/File:Erico_Verissimo_em_1961.jpg
+- museu-erico-verissimo.jpg: Casa onde Erico Verissimo viveu, hoje Museu Erico Verissimo, em Cruz Alta. Foto de Lucas Mello Schnorr (2007), dominio publico. https://commons.wikimedia.org/wiki/File:Cruz-alta-museu-erico-verissimo-1.jpg
+- gaucho-rio-negro-1839.jpg: Gravura de um gaucho na regiao do Rio Negro (1839), usada como referencia visual de epoca, nao como retrato de Rodrigo. Desenho de J. Drayton, gravura de R. S. Gilbert, dominio publico. https://commons.wikimedia.org/wiki/File:Gaucho_of_Rio-Negro.jpg
 - carolina-quarto-de-despejo.jpg: Carolina Maria de Jesus autografando Quarto de Despejo, 1960. Arquivo Nacional / Fundo Correio da Manha. Dominio publico. https://commons.wikimedia.org/wiki/File:Carolina_Maria_de_Jesus_assinando_seu_livro_Quarto_de_Despejo_em_1960.jpg
 - carolina-retrato-1960.jpg: Carolina Maria de Jesus, 1960. Arquivo Nacional. Dominio publico. https://commons.wikimedia.org/wiki/File:Carolina_Maria_de_Jesus,_1960_cr.jpg
 - aluisio-azevedo-acervo.jpg: Aluisio Azevedo, retrato de acervo dos anos 1910. Biblioteca Nacional Digital. Dominio publico. https://commons.wikimedia.org/wiki/File:Aluizio_de_azevedo_ABL.jpg
