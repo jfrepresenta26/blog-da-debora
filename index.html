@@ -134,7 +134,7 @@ shelf3.innerHTML=renderShelf(books.filter(b=>b.grade===3));
 const tabs=[['historia','A história'],['contexto','Contexto & temas'],['personagens','Personagens'],['autor','Sobre o autor'],['descobertas','Para descobrir']];
 function paragraphList(items){return items.map(t=>`<p>${safe(t)}</p>`).join('')}
 const photoStories={
-rodrigo:[['imagens/erico-verissimo-arquivo.png','Érico Veríssimo na redação do jornal A Noite, em 1940.','Jornal A Noite / Biblioteca Nacional Digital · Domínio público','https://commons.wikimedia.org/wiki/File:Erico_verissimo.png'],['imagens/erico-verissimo-1961.jpg','Érico Veríssimo em registro de 1961.','Arquivo fotográfico · Wikimedia Commons · Domínio público','https://commons.wikimedia.org/wiki/File:%C3%89rico_Ver%C3%ADssimo_em_1961.jpg']],
+rodrigo:[['imagens/erico-verissimo-arquivo.png','Érico Veríssimo na redação do jornal A Noite, em 1940.','Jornal A Noite / Biblioteca Nacional Digital · Domínio público','https://commons.wikimedia.org/wiki/File:Erico_verissimo.png'],['imagens/erico-verissimo-1961.jpg','Érico Veríssimo em registro de 1961.','Arquivo fotográfico · Wikimedia Commons · Domínio público','https://commons.wikimedia.org/wiki/File:%C3%89rico_Ver%C3%ADssimo_em_1961.jpg'],['imagens/museu-erico-verissimo.jpg','Casa onde Érico Veríssimo viveu, hoje Museu Érico Veríssimo, em Cruz Alta.','Lucas Mello Schnorr · 2007 · Domínio público','https://commons.wikimedia.org/wiki/File:Cruz-alta-museu-erico-verissimo-1.jpg'],['imagens/gaucho-rio-negro-1839.jpg','Gravura de um gaúcho na região do Rio Negro, de 1839; referência visual de época, não retrato de Rodrigo.','J. Drayton (desenho), R. S. Gilbert (gravura) · Domínio público','https://commons.wikimedia.org/wiki/File:Gaucho_of_Rio-Negro.jpg']],
 quarto:[['imagens/carolina-quarto-de-despejo.jpg','Carolina Maria de Jesus autografa Quarto de Despejo, em 1960.','Arquivo Nacional / Fundo Correio da Manhã · Domínio público','https://commons.wikimedia.org/wiki/File:Carolina_Maria_de_Jesus_assinando_seu_livro_Quarto_de_Despejo_em_1960.jpg'],['imagens/carolina-retrato-1960.jpg','Retrato de Carolina Maria de Jesus em 1960.','Arquivo Nacional · Domínio público','https://commons.wikimedia.org/wiki/File:Carolina_Maria_de_Jesus,_1960_cr.jpg']],
 cortico:[['imagens/aluisio-azevedo-acervo.jpg','Retrato de Aluísio Azevedo, preservado em acervo histórico.','Acervo da Biblioteca Nacional Digital · Domínio público','https://commons.wikimedia.org/wiki/File:Aluizio_de_azevedo_ABL.jpg'],['imagens/aluisio-azevedo-retrato.jpg','Outro retrato de Aluísio Azevedo.','Wikimedia Commons · Domínio público','https://commons.wikimedia.org/wiki/File:Aluisio_Azevedo.jpg']],
 cancao:[['imagens/conceicao-evaristo.png','Conceição Evaristo durante o Festival Latinidades, em 2013.','Foto: Fora do Eixo · Wikimedia Commons · CC BY-SA 2.0','https://commons.wikimedia.org/wiki/File:ConceicaoEvaristo.jpg']],
@@ -186,5 +186,19 @@ window.openBook=function(id,updateHash=true){
  const firstPanel=$('#readerContent [data-panel="historia"]');if(firstPanel)firstPanel.id='capitulo-inicial';
  setTab('historia');if(updateHash)history.pushState(null,'','#livro-'+id);window.scrollTo({top:0,behavior:'instant'});document.title=b.title+' | Blog da Debora';
 };
+</script>
+<style>
+.author-note{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:18px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
+.author-note strong{color:var(--ink);font-weight:700}
+.author-note span{border-left:1px solid var(--border);padding-left:10px}
+.hero h1 span{font-size:1.14em}
+</style>
+<script>
+const heroName=document.querySelector('.hero h1 span');
+if(heroName)heroName.textContent='Débora.';
+const authorNote=document.createElement('p');
+authorNote.className='author-note';
+authorNote.innerHTML='<strong>Débora Lubashet</strong><span>Estudante do SESI</span>';
+document.querySelector('.hero .subtitle')?.after(authorNote);
 </script>
 </body></html>
