@@ -193,6 +193,45 @@ window.openBook=function(id,updateHash=true){
 .author-note strong{color:var(--ink);font-weight:700}
 .author-note span{border-left:1px solid var(--border);padding-left:10px}
 .hero h1 span{font-size:1.14em}
+@media(max-width:760px){
+ .book-intro.editorial-opening{grid-template-columns:minmax(0,1fr) 92px;grid-template-areas:"index index" "copy cover";align-items:start;gap:16px;margin:8px auto 24px;padding:20px 16px}
+ .book-intro.editorial-opening .opening-index{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"author year";align-items:center;gap:8px;padding:0 0 12px;border-right:0;border-bottom:1px solid #ead5dc}
+ .book-intro.editorial-opening .index-label,.book-intro.editorial-opening .index-flower{display:none}
+ .book-intro.editorial-opening .index-author{grid-area:author;min-width:0;font-size:15px;overflow-wrap:anywhere}
+ .book-intro.editorial-opening .index-year{grid-area:year;text-align:right;white-space:nowrap;font-size:10px}
+ .book-intro.editorial-opening .intro-copy{grid-area:copy;min-width:0;align-self:start}
+ .book-intro.editorial-opening .intro-visual{grid-area:cover;min-width:0;width:100%;min-height:0;align-self:start;gap:8px;padding-top:10px}
+ .book-intro.editorial-opening h1{font-size:clamp(25px,7vw,38px);line-height:1.05;overflow-wrap:normal;margin:11px 0 13px}
+ .book-intro.editorial-opening .eyebrow{font-size:9px;line-height:1.5;letter-spacing:.09em}
+ .book-intro.editorial-opening p{max-width:none;font-size:13px;line-height:1.65;margin-bottom:16px}
+ .book-intro.editorial-opening .physical-cover{width:100%;max-width:110px;aspect-ratio:2/3}
+ .book-intro.editorial-opening .opening-cover-note{font-size:8px;line-height:1.4;letter-spacing:.06em}
+ .book-intro.editorial-opening:after{right:98px;bottom:-26px;font-size:78px}
+ .book-page .content-grid{padding-right:20px;padding-left:20px}
+ .book-page .story-columns{grid-template-columns:minmax(0,1fr);gap:16px}
+ .book-page .story-aside{padding:17px;border-left:0;border-top:3px solid #d58aa2}
+ .book-page .people-list{grid-template-columns:minmax(0,1fr);gap:15px}
+ .book-page .author-profile{grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:14px}
+ .book-page .author-profile img{height:180px}
+ .book-page .photo-story-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .book-page .photo-story .wide-photo{grid-column:auto}
+ .book-page .photo-story img,.book-page .photo-story .wide-photo img{height:clamp(160px,54vw,240px)}
+ .book-page .news-row{grid-template-columns:minmax(0,1fr);gap:12px}
+ .book-page .news-link{white-space:normal}
+ .book-page .panel h2{font-size:clamp(30px,8vw,40px)}
+ .book-page .panel p{max-width:none;font-size:14px;line-height:1.75}
+}
+@media(max-width:390px){
+ .book-intro.editorial-opening{grid-template-columns:minmax(0,1fr) 78px;gap:12px;padding:17px 12px}
+ .book-intro.editorial-opening .index-author{font-size:13px}
+ .book-intro.editorial-opening h1{font-size:25px}
+ .book-intro.editorial-opening p{font-size:12px;line-height:1.6}
+ .book-intro.editorial-opening .physical-cover{max-width:78px}
+ .book-intro.editorial-opening .opening-cover-note{font-size:7px;letter-spacing:.02em}
+ .book-page .content-grid{padding-right:16px;padding-left:16px}
+ .book-page .author-profile{grid-template-columns:1fr}
+ .book-page .author-profile img{width:min(100%,220px);height:220px}
+}
 </style>
 <script>
 const heroName=document.querySelector('.hero h1 span');
