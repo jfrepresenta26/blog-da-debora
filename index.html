@@ -128,6 +128,7 @@ const books=[
 const $=sel=>document.querySelector(sel), shelf2=$('#shelf2'),shelf3=$('#shelf3'),home=$('#home'),page=$('#bookPage');let current=null,currentTab='historia';
 function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function cover(b){return `<div class="physical-cover"><img src="${b.cover || "data:,"}" alt="Capa de ${safe(b.title)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cover-fallback">${safe(b.title)}<small>${safe(b.author)}</small></div></div>`}
+books.find(b=>b.id==='quarto').cover='imagens/quarto-de-despejo-edicao-comemorativa.webp';
 const renderShelf=items=>items.map((b,i)=>`<button class="shelf-book" data-open="${b.id}" aria-label="Abrir ${safe(b.title)} — ${b.grade}º ano"><div class="cover-stage">${cover(b)}</div><div class="shelf-info"><span class="smalltag">${b.grade}º ano · Leitura 0${i+1} · ${safe(b.period)}</span><h3>${safe(b.title)}</h3><p>${safe(b.author)}</p><span class="read-it">Explorar esta obra ↗</span></div></button>`).join('');
 shelf2.innerHTML=renderShelf(books.filter(b=>b.grade===2));
 shelf3.innerHTML=renderShelf(books.filter(b=>b.grade===3));
@@ -198,7 +199,7 @@ const heroName=document.querySelector('.hero h1 span');
 if(heroName)heroName.textContent='Débora.';
 const authorNote=document.createElement('p');
 authorNote.className='author-note';
-authorNote.innerHTML='<strong>Débora Lubashet</strong><span>Estudante do SESI</span>';
+authorNote.innerHTML='<strong>Debora Lubacheviski</strong><span>Estudante do SESI</span>';
 document.querySelector('.hero .subtitle')?.after(authorNote);
 </script>
 </body></html>
