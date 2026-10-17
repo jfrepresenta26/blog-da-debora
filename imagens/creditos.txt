@@ -17,5 +17,6 @@ Imagens dos autores e edicoes de 3o ano:
 - monja-coen.png: Retrato da Monja Coen, site oficial da autora. https://www.monjacoen.com.br/
 - allan-dias-castro.png: Retrato de Allan Dias Castro, Editora Sextante. https://sextante.com.br/products/a-monja-e-o-poeta
 - monja-poeta-pagina-01.png e monja-poeta-pagina-02.png: imagens editoriais da edicao, Editora Sextante. https://sextante.com.br/products/a-monja-e-o-poeta
+- quarto-de-despejo-edicao-comemorativa.webp: capa da edicao comemorativa (2020), arte de No Martins, Editora Atica, ISBN 9788508196555. Imagem do catalogo Martins Fontes: https://www.martinsfontespaulista.com.br/quarto-de-despejo---edicao-comemorativa-932941/p
 
 As imagens foram mantidas como arquivos locais na pasta imagens para o site publicado nao depender de links externos para exibi-las.
