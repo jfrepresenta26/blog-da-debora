@@ -179,10 +179,26 @@ window.panels=function(b){
 };
 </script>
 <script>
+const personalReadings={
+ rodrigo:{teaser:'Na minha leitura, Rodrigo é o tipo de pessoa que muda o ambiente assim que chega. Fiquei pensando em como o jeito impulsivo dele afeta quem está por perto e nas consequências que acompanham as escolhas.',reflection:'As relações e as decisões atravessam gerações. Ninguém vive isolado das escolhas que faz ou das que vieram antes.'},
+ quarto:{teaser:'Eu senti a leitura muito próxima porque tudo aparece pelo olhar de Carolina. Os registros do cotidiano me fizeram pensar em como coisas simples podem mostrar muito sobre a vida de alguém.',reflection:'A voz de Carolina ficou comigo: ela observa, questiona e faz o leitor parar para escutar.'},
+ cortico:{teaser:'Enquanto lia, fiquei com a impressão de que o cortiço não é só cenário: a convivência naquele espaço aproxima as pessoas, cria conflitos e influencia escolhas. Entendi o livro como um olhar para o peso do ambiente nas relações.',reflection:'As diferenças entre as personagens me fizeram pensar em como o mesmo lugar pode significar coisas diferentes para cada pessoa.'},
+ cancao:{teaser:'Minha leitura ficou ligada às diferentes experiências de afeto que aparecem no romance. Fiquei pensando em como desejo, cuidado e responsabilidade podem se misturar nas relações.',reflection:'O que mais me chamou atenção foi perceber que cada mulher tem sua própria perspectiva e que nenhuma experiência cabe numa resposta única.'},
+ porque:{teaser:'Eu li o livro como um convite para rever por que a gente escolhe o que escolhe. Algumas reflexões me fizeram pensar em como organizo meu tempo e no que considero importante.',reflection:'Entendi que não existe uma resposta pronta: vale olhar com mais atenção para a relação entre trabalho, propósito e vida cotidiana.'},
+ monja:{teaser:'Para mim, o livro parece uma conversa em que a poesia abre espaço e a reflexão continua. Gostei de ler aos poucos e perceber como sentimentos e presença aparecem em palavras simples.',reflection:'O que entendi é que prestar atenção ao presente também pode mudar o jeito de olhar para as relações.'}
+};
+window.panels=function(b){
+ const note=personalReadings[b.id];
+ const portrait=b.id==='quarto'?photoStories.quarto[1]:(photoStories[b.id]||[])[0];
+ const authorImage=portrait?`<figure><img src="${portrait[0]}" alt="${safe(portrait[1])}" loading="lazy"><figcaption>${safe(portrait[2])} · <a href="${portrait[3]}" target="_blank" rel="noopener noreferrer">Fonte ↗</a></figcaption></figure>`:'';
+ const timeline=b.timeline.map(t=>`<div class="timeline-item"><b>${safe(t[0])}</b> — ${safe(t[1])}</div>`).join('');
+ return `<section class="panel personal-panel" data-panel="historia"><span class="chapter-no">Meu caderno de leitura</span><h2>O que eu entendi</h2><div class="personal-reading"><p>${safe(note.teaser)}</p><aside class="story-aside"><strong>O que ficou comigo</strong><p>${safe(note.reflection)}</p></aside></div></section><section class="panel author-panel" data-panel="autor"><span class="chapter-no">Sobre quem escreveu</span><h2>${safe(b.author)}</h2><div class="author-profile">${authorImage}<div><p>${safe(b.bio)}</p><h3>Algumas datas da trajetória</h3><div class="timeline">${timeline}</div></div></div><h3>Fontes consultadas</h3><div class="source-links">${b.sources.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener noreferrer">${safe(s[0])} ↗</a>`).join('')}</div></section>`;
+};
 window.openBook=function(id,updateHash=true){
  const b=books.find(item=>item.id===id);if(!b)return;
  current=b;home.classList.add('hidden');page.classList.add('active');
- $('#bookIntro').innerHTML=`<div class="book-intro editorial-opening" style="--bookbg:${b.bg}" aria-label="Abertura editorial de ${safe(b.title)}"><aside class="opening-index"><span class="index-label">Leitura<br>do ${b.grade}º ano</span><span class="index-flower" aria-hidden="true">✿</span><span class="index-author">${safe(b.author)}</span><span class="index-year">Edição · ${safe(b.year)}</span></aside><div class="intro-copy"><span class="eyebrow">${safe(b.period)} · ${safe(b.tag)}</span><h1>${safe(b.title)}</h1><p>${safe(b.intro)}</p><a class="opening-link" href="#capitulo-inicial">Entrar nesta história ↓</a></div><div class="intro-visual">${cover(b)}<span class="opening-cover-note">Da biblioteca da Debora · ${safe(b.year)}</span></div></div>`;
+ const note=personalReadings[b.id];
+ $('#bookIntro').innerHTML=`<div class="book-intro editorial-opening" style="--bookbg:${b.bg}" aria-label="Caderno de leitura: ${safe(b.title)}"><aside class="opening-index"><span class="index-label">Meu caderno<br>de leitura</span><span class="index-flower" aria-hidden="true">✿</span><span class="index-author">${safe(b.author)}</span><span class="index-year">Minhas impressões</span></aside><div class="intro-copy"><span class="eyebrow">Minha leitura</span><h1>${safe(b.title)}</h1><p>${safe(note.teaser)}</p><a class="opening-link" href="#capitulo-inicial">Ler o que eu entendi ↓</a></div><div class="intro-visual">${cover(b)}<span class="opening-cover-note">Da minha estante</span></div></div>`;
  $('#sideTabs').innerHTML='';$('#mobileTabs').innerHTML='';$('#readerContent').innerHTML=panels(b);
  const firstPanel=$('#readerContent [data-panel="historia"]');if(firstPanel)firstPanel.id='capitulo-inicial';
  setTab('historia');if(updateHash)history.pushState(null,'','#livro-'+id);window.scrollTo({top:0,behavior:'instant'});document.title=b.title+' | Blog da Debora';
@@ -222,6 +238,11 @@ window.openBook=function(id,updateHash=true){
  .book-page .panel p{max-width:none;font-size:14px;line-height:1.75}
 }
 @media(max-width:390px){
+ .header-inner{gap:8px}
+ .brand{gap:7px;min-width:0}
+ .brandmark{width:32px;height:32px;flex:0 0 32px;font-size:19px}
+ .brandtext{font-size:18px}
+ .tiny-pill{flex:none;padding:8px 9px;font-size:9px}
  .book-intro.editorial-opening{grid-template-columns:minmax(0,1fr) 78px;gap:12px;padding:17px 12px}
  .book-intro.editorial-opening .index-author{font-size:13px}
  .book-intro.editorial-opening h1{font-size:25px}
