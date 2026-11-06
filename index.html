@@ -386,7 +386,7 @@ document.querySelector('.hero .subtitle')?.after(authorNote);
   }
   window.openBook = function(id, updateHash=true) {
     const book = books.find(item=>item.id===id);
-    if (id === 'poema-mar') {
+    if (id === 'poema-mar' || id === 'monja') {
       const monjaBook = books.find(item=>item.id==='monja');
       if (monjaBook) openMonjaPoem(monjaBook, updateHash);
       return;
