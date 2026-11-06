@@ -316,4 +316,86 @@ authorNote.className='author-note';
 authorNote.innerHTML='<strong>Debora Lubacheviski</strong><span>Estudante do SESI</span>';
 document.querySelector('.hero .subtitle')?.after(authorNote);
 </script>
+<style>
+.book-intro.basic-book-opening{min-height:0;grid-template-columns:minmax(0,1fr) minmax(180px,.52fr);align-items:center;gap:clamp(20px,5vw,58px);padding:clamp(24px,5vw,54px);background:linear-gradient(135deg,#fffdfc,#fff2f5)}
+.basic-book-opening .intro-copy{padding:0}.basic-book-opening .intro-copy h1{font-size:clamp(34px,5vw,60px)}.basic-book-opening .intro-copy p{max-width:65ch}.basic-book-opening .intro-visual{min-height:0;padding:0}.basic-book-opening .physical-cover{width:min(100%,210px);aspect-ratio:2/3}
+.basic-book-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}.basic-book-facts div{padding:13px 15px;border:1px solid #efdce1;border-radius:12px;background:#fff}.basic-book-facts span,.basic-author-card>span{display:block;color:#ad6c82;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}.basic-book-facts strong{display:block;margin-top:5px;color:#59424a;font-size:13px;line-height:1.5}
+.basic-summary-panel,.basic-author-panel{max-width:930px;margin:30px auto;padding:clamp(22px,4vw,38px);border:1px solid #efdce1;border-radius:18px;background:#fffdfc}.basic-summary-panel h2,.basic-author-panel h2{margin:8px 0 16px;color:#563d48;font:clamp(29px,4vw,42px)/1.12 'DM Serif Display',Georgia,serif}.basic-summary-panel p,.basic-author-panel p{color:#77656b;font-size:15px;line-height:1.85}.basic-author-card{padding:clamp(20px,4vw,32px);border:1px solid #efdce1;border-radius:16px;background:linear-gradient(140deg,#fff3f6,#fffdfa)}.basic-author-card h3{margin:8px 0 12px;font:32px/1.15 'DM Serif Display',Georgia,serif;color:#563d48}.basic-author-dates{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}.basic-author-dates span{padding:9px 12px;border:1px solid #eddae0;border-radius:99px;background:#fff;color:#8f5b6d;font-size:12px;font-weight:700}
+.monja-poem-opening{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,.48fr);align-items:center;gap:clamp(20px,5vw,54px);margin-top:24px;padding:clamp(23px,5vw,52px);border:1px solid #efd3dc;border-radius:20px;background:linear-gradient(135deg,#fff0f4,#fffdfa 74%)}.monja-poem-opening h1{margin:10px 0 13px;color:#563d48;font:clamp(38px,5.5vw,66px)/1.02 'DM Serif Display',Georgia,serif}.monja-poem-opening p{max-width:62ch;color:#79666e;font-size:15px;line-height:1.8}.monja-poem-cover{display:grid;justify-items:center;gap:10px}.monja-poem-cover .physical-cover{width:min(100%,200px);aspect-ratio:2/3}.monja-poem-cover small{color:#9b7b85;font-size:10px;letter-spacing:.1em;text-transform:uppercase;text-align:center}.monja-poem-reading{max-width:960px;margin:30px auto 60px;padding:clamp(20px,4vw,38px);border:1px solid #efdce1;border-radius:18px;background:#fffdfb}.monja-poem-reading h2{margin:8px 0 22px;color:#563d48;font:clamp(32px,4.5vw,48px)/1.1 'DM Serif Display',Georgia,serif}.monja-poem-stanzas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.monja-poem-stanzas p{margin:0;padding:17px 19px;border:1px solid #f0dfe4;border-radius:12px;background:linear-gradient(135deg,#fff8f9,#fffefd);color:#604b53;font:16px/1.8 'DM Serif Display',Georgia,serif}.monja-poem-summary{margin:23px 0 0;padding:20px 22px;border-left:4px solid #d38ca4;background:#fff2f5}.monja-poem-summary strong{display:block;margin-bottom:7px;color:#a45d77;font-size:10px;letter-spacing:.13em;text-transform:uppercase}.monja-poem-summary p{margin:0;color:#634853;font-size:15px;line-height:1.8}
+@media(max-width:680px){.book-intro.basic-book-opening{grid-template-columns:minmax(0,1fr) 92px;gap:14px;padding:20px 15px}.basic-book-opening .intro-copy h1{font-size:clamp(27px,7vw,38px)}.basic-book-opening .intro-copy p{font-size:13px}.basic-book-opening .intro-visual{align-self:start;padding-top:12px}.basic-book-opening .physical-cover{width:100%;max-width:96px}.basic-book-facts{grid-template-columns:1fr;gap:8px}.basic-book-facts div{padding:11px}.monja-poem-opening{grid-template-columns:minmax(0,1fr) 90px;gap:12px;padding:20px 14px}.monja-poem-opening h1{font-size:clamp(29px,8vw,42px)}.monja-poem-opening p{font-size:12px;line-height:1.7}.monja-poem-cover .physical-cover{max-width:88px}.monja-poem-cover small{font-size:8px}.monja-poem-stanzas{grid-template-columns:1fr;gap:9px}.monja-poem-stanzas p{padding:14px;font-size:15px}.monja-poem-summary{padding:16px}}
+</style>
+<script>
+(() => {
+  const authorFacts = {
+    rodrigo:{born:'17 de dezembro de 1905 · Cruz Alta (RS)',about:'Érico Verissimo foi romancista e tradutor. Ficou conhecido por contar histórias que acompanham pessoas, famílias e mudanças na sociedade brasileira.'},
+    quarto:{born:'14 de março de 1914 · Sacramento (MG)',about:'Carolina Maria de Jesus foi escritora e registrou em seus diários a vida cotidiana na favela do Canindé, em São Paulo. Sua escrita deu espaço à própria voz e à experiência de uma mulher negra que vivia da coleta de papel.'},
+    cortico:{born:'14 de abril de 1857 · São Luís (MA)',about:'Aluísio Azevedo foi romancista, jornalista, caricaturista e diplomata. É lembrado como um dos principais nomes do Naturalismo no Brasil.'},
+    cancao:{born:'29 de novembro de 1946 · Belo Horizonte (MG)',about:'Conceição Evaristo é escritora, professora e pesquisadora. Sua obra é marcada pela memória e pelas experiências de mulheres negras; ela também formulou o conceito de escrevivência.'},
+    porque:{born:'5 de março de 1954 · Londrina (PR)',about:'Mario Sergio Cortella é filósofo, professor e escritor. Em seus livros, aproxima a filosofia de assuntos do cotidiano, como educação, ética, escolhas e trabalho.'}
+  };
+  const bookSummaries = {
+    rodrigo:'Eu entendi essa história como a chegada de Rodrigo a Santa Fé mudando a vida de uma família. Acompanhando suas escolhas e sua relação com Bibiana, o livro mostra como encontros e decisões deixam marcas que continuam ao longo do tempo.',
+    quarto:'A leitura acompanha os registros que Carolina faz do cotidiano no Canindé, em São Paulo. Ela escreve sobre a busca por sustento para os filhos, as dificuldades do dia a dia e também seus pensamentos e planos. Como é um diário, a história chega pela própria voz da autora.',
+    cortico:'O livro acompanha a convivência de muitos moradores de um cortiço no Rio de Janeiro. As histórias se cruzam dentro daquele espaço, e eu percebi como o ambiente, o trabalho e a busca por uma vida melhor influenciam os conflitos e as relações entre eles.',
+    cancao:'A história gira em torno de Fio Jasmim, mas o que mais me chama atenção é que as mulheres que cruzaram o caminho dele também contam suas lembranças. Assim, o livro mostra diferentes experiências de afeto e como as escolhas de uma pessoa podem mexer com a vida de outras.',
+    porque:'O livro reúne reflexões sobre trabalho, rotina e propósito. Enquanto lia, fui pensando nos motivos por trás das escolhas do dia a dia e no que faz uma atividade ter sentido para cada pessoa.'
+  };
+  const bookFacts = {
+    rodrigo:'1949 · O Continente, de O tempo e o vento',
+    quarto:'19 de agosto de 1960 · primeira edição',
+    cortico:'1890 · primeira edição',
+    cancao:'2018 · primeira edição; edição da Pallas em 2022',
+    porque:'2016 · primeira edição'
+  };
+  const poemStanzas = [
+    ['É preciso remar.','O mar ensina:','Paciência aos que têm pressa,','Equilíbrio aos que já caíram,','Mas não deixaram de remar.'],
+    ['Para ganhar o mar,','É preciso perder o medo','E manter o respeito.'],
+    ['Mas é preciso remar.','O mar ensina:','É possível encontrar','A liberdade entre suas correntes.'],
+    ['Mas é preciso remar.','O mar ensina:','A maré de sorte só chega para quem','Entende que os ventos mudam de direção','E por isso não deixa de remar,','Porque ninguém aprende','A nadar na areia.'],
+    ['O mar ensina.','Mas é preciso remar.'],
+    ['Eu só peço fôlego','Para vencer a arrebentação','E entender que isso não significa','Competir com o mar.'],
+    ['Fôlego!','Para receber o mar.','Basta perceber a entrada, pedir licença','E aí, sim, ser recebido pelo mar aberto.'],
+    ['Fôlego!','Para lembrar que ondas e lágrimas','São feitas de água salgada.','Fôlego!','Para transformar tristeza em mar.'],
+    ['E se o caminho for longo?','Fôlego!','Para remar na volta.','Fôlego!','Para voltar a remar.']
+  ];
+  const poemThought = 'Eu entendi que remar é continuar tentando, mas sem achar que preciso vencer tudo na força. O mar pede respeito: é preciso observar o momento, aceitar que os ventos mudam e encontrar o próprio ritmo. Gostei de como o poema fala de ir e voltar, cansar e ainda assim poder começar de novo. Para mim, ele também lembra que pedir fôlego e fazer uma pausa não significa desistir.';
+  const poemSummary = 'O mar e a remada viram imagens para falar de persistência, respeito e mudanças. O poema mostra que seguir em frente não é competir com as dificuldades: é perceber o momento, pedir fôlego e continuar no próprio ritmo.';
+
+  function setCommonPage(book, updateHash) {
+    current = book;
+    home.classList.add('hidden'); page.classList.add('active');
+    $('#sideTabs').innerHTML = ''; $('#mobileTabs').innerHTML = '';
+    setTab('historia');
+    if (updateHash) history.pushState(null,'','#livro-'+book.id);
+    window.scrollTo({top:0,behavior:'instant'});
+  }
+  function openBasicBook(book, updateHash) {
+    const facts = authorFacts[book.id] || {born:'',about:book.bio || ''};
+    const summary = `<p>${safe(bookSummaries[book.id] || book.short || book.intro || '')}</p>`;
+    const publication = bookFacts[book.id] || `${book.year} · publicação`;
+    setCommonPage(book, updateHash);
+    $('#bookIntro').innerHTML = `<div class="book-intro basic-book-opening" style="--bookbg:${book.bg}"><div class="intro-copy"><span class="eyebrow">Meu resumo de leitura</span><h1>${safe(book.title)}</h1><p>${safe(book.short || '')}</p><div class="basic-book-facts"><div><span>Publicado</span><strong>${safe(publication)}</strong></div><div><span>Autor(a)</span><strong>${safe(book.author)}</strong></div></div></div><div class="intro-visual">${cover(book)}</div></div>`;
+    $('#readerContent').innerHTML = `<section class="panel basic-summary-panel active"><span class="chapter-no">Resumo do livro</span><h2>Sobre a obra</h2>${summary}</section><section class="panel basic-author-panel active"><div class="basic-author-card"><span>Sobre o autor</span><h3>${safe(book.author)}</h3><div class="basic-author-dates"><span>Nasceu: ${safe(facts.born || 'informação biográfica')}</span><span>Livro publicado: ${safe(publication)}</span></div><p>${safe(facts.about)}</p></div></section>`;
+    document.title = book.title+' | Blog da Debora';
+  }
+  function openMonjaPoem(book, updateHash) {
+    setCommonPage(book, updateHash);
+    $('#bookIntro').innerHTML = `<div class="monja-poem-opening"><div><span class="eyebrow">Um poema que li em A monja e o poeta</span><h1>O mar ensina</h1><p>${poemSummary}</p><div class="poem-opening-credit">Poema de Allan Dias Castro · livro de Allan Dias Castro e Monja Coen</div></div><div class="monja-poem-cover">${cover(book)}<small>Capa do livro · edição de 2021</small></div></div>`;
+    $('#readerContent').innerHTML = `<section class="panel monja-poem-reading active"><span class="chapter-no">O poema</span><h2>O mar ensina</h2><div class="monja-poem-stanzas">${poemStanzas.map(stanza=>`<p>${stanza.map(safe).join('<br>')}</p>`).join('')}</div><div class="monja-poem-summary"><strong>O que eu entendi do poema</strong><p>${poemThought}</p></div></section>`;
+    document.title = 'O mar ensina | Blog da Debora';
+  }
+  window.openBook = function(id, updateHash=true) {
+    const book = books.find(item=>item.id===id);
+    if (id === 'poema-mar') {
+      const monjaBook = books.find(item=>item.id==='monja');
+      if (monjaBook) openMonjaPoem(monjaBook, updateHash);
+      return;
+    }
+    if (!book) return;
+    openBasicBook(book, updateHash);
+  };
+  document.querySelector('.shelf-book[data-open="poema-mar"]')?.remove();
+  if (location.hash.startsWith('#livro-')) window.openBook(decodeURIComponent(location.hash.slice(7)), false);
+})();
+</script>
 </body></html>
