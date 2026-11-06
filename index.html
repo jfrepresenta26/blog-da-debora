@@ -111,7 +111,7 @@ body{background:var(--bg);color:var(--ink)}
 <header class="site-header"><div class="shell header-inner"><a href="#inicio" class="brand" id="brandHome"><span class="brandmark">❀</span><span class="brandtext">Blog da <em>Debora</em></span></a><nav class="nav" aria-label="Menu principal"><a href="#inicio" class="go-home">Início</a><a href="#biblioteca" class="go-home">Biblioteca</a><a href="#sobre" class="go-home">Sobre o blog</a></nav><button class="tiny-pill" id="homeShortcut">♡ Minha biblioteca</button></div></header>
 <main>
 <div id="home" class="home">
-<section class="hero" id="inicio"><span class="ornament o1">✳</span><span class="ornament o2">✦</span><div class="shell"><div><span class="eyebrow">Um cantinho para quem ama histórias</span><h1>Blog da<br><span>Debora.</span></h1><p class="subtitle">Entre páginas, personagens e palavras que ficam com a gente. Uma biblioteca delicada com leituras do 2º e do 3º ano — seis obras para descobrir no seu próprio ritmo.</p><div class="hero-actions"><a href="#biblioteca" class="primary">Conhecer os livros <span aria-hidden="true">↗</span></a><a href="#sobre" class="secondary-link">Conheça nosso cantinho</a></div></div><div class="hero-art" aria-hidden="true"><div class="hero-oval"></div><div class="stars">✧ ✦</div><div class="flower f1">✿</div><div class="flower f2">❀</div><div class="flower f3">✾</div><div class="art-book"><span class="mini">histórias para florescer</span><span class="book-title">um livro,<br>mil mundos.</span><span style="margin-top:15px;color:#be8f9a">♡</span></div><div class="side-quote">com carinho, sempre...</div></div></div></section>
+<section class="hero" id="inicio"><span class="ornament o1">✳</span><span class="ornament o2">✦</span><div class="shell"><div><span class="eyebrow">Um cantinho para quem ama histórias</span><h1>Blog da<br><span>Debora.</span></h1><p class="subtitle">Atualmente, estou cursando o terceiro ano do Ensino Médio no SESI. Gosto muito de ler, praticar esportes e aprender coisas novas. No futuro, pretendo cursar Direito, uma área que desperta meu interesse e na qual desejo construir minha carreira profissional.</p><div class="hero-actions"><a href="#biblioteca" class="primary">Conhecer os livros <span aria-hidden="true">↗</span></a><a href="#sobre" class="secondary-link">Conheça nosso cantinho</a></div></div><div class="hero-art profile-visual"><img src="imagens/debora-perfil.jpg" alt="Débora Lubacheviski, autora do Blog da Debora" fetchpriority="high"></div></div></section>
 <section class="section-pad" id="biblioteca"><div class="shell"><div class="section-heading"><span class="eyebrow">Nossa pequena coleção</span><h2>Escolha sua próxima <em>leitura</em></h2><p>Seis livros, duas turmas e muitos encontros com a leitura. Escolha seu ano e toque na capa para entrar.</p></div><div class="grade-section"><div class="grade-heading"><span class="grade-number">02</span><div><span class="eyebrow">Leituras do 2º ano</span><h3>Histórias para descobrir <em>♡</em></h3></div></div><div class="shelf-layout" id="shelf2"></div></div><div class="grade-section grade-three"><div class="grade-heading"><span class="grade-number">03</span><div><span class="eyebrow">Leituras do 3º ano</span><h3>Mais páginas, novos olhares <em>♡</em></h3></div></div><div class="shelf-layout" id="shelf3"></div></div><div class="note-strip" id="sobre"><div><strong>Um espaço para ler, descobrir e sentir. ♡</strong><p>Resumos cuidadosos, contexto histórico, autores e pequenas descobertas em cada obra.</p></div><span class="note-deco">✿ ♡ ✦</span></div></div></section>
 </div>
 <section id="bookPage" class="book-page" aria-live="polite"><div class="shell book-top"><button class="back-button" id="backButton">← Voltar à biblioteca</button><div id="bookIntro"></div><div class="content-grid"><aside class="content-nav" id="sideTabs" aria-label="Seções do livro"></aside><div><div class="mobile-tabs" id="mobileTabs" aria-label="Seções do livro"></div><article class="reader-content" id="readerContent"></article><div class="ending">Fim da página, começo de novas leituras ♡</div></div></div></div></section>
@@ -219,13 +219,14 @@ window.openBook=function(id,updateHash=true){
 if(location.hash==='#livro-poema-mar')openPoemPage(false);
 </script>
 <style>
-.author-note{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:center;max-width:580px;margin:18px 0 0;padding:12px;background:rgba(255,255,255,.72);border:1px solid #efdce1;border-radius:15px;box-shadow:0 8px 24px #9b536b0d;color:var(--muted);font-size:12px;line-height:1.65}
-.author-note>img{display:block;width:76px;height:92px;object-fit:cover;object-position:center 30%;border-radius:11px}
-.author-note-heading{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 10px;margin-bottom:5px}
+.author-note{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:15px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
 .author-note strong{color:var(--ink);font-weight:700}
-.author-note-heading span{color:#a05a74;font-size:11px;font-weight:700}
-.author-note-copy p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}
-@media(max-width:600px){.author-note{grid-template-columns:64px minmax(0,1fr);gap:10px;padding:10px}.author-note>img{width:64px;height:80px}.author-note-copy p{font-size:11px}}.hero h1 span{font-size:1.14em}
+.author-note span{border-left:1px solid var(--border);padding-left:10px}
+.hero-art.profile-visual{height:420px;position:relative;display:grid;place-items:center}
+.hero-art.profile-visual:before{content:'';position:absolute;width:min(82%,370px);aspect-ratio:1;border:1px solid #e8b9c6;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff8fa 0%,#f6d4dd 76%);box-shadow:inset 0 0 0 14px #ffffff24}
+.hero-art.profile-visual:after{content:'✿';position:absolute;right:7%;top:9%;z-index:2;color:#cf6e91;font-size:40px;opacity:.88;pointer-events:none}
+.hero-art.profile-visual img{position:relative;z-index:1;display:block;width:min(76%,320px);height:390px;object-fit:cover;object-position:center 30%;border:8px solid #fff9fa;border-radius:170px 170px 18px 18px;box-shadow:0 20px 50px #92516c33;transform:rotate(2deg)}
+@media(max-width:760px){.hero-art.profile-visual{height:270px;margin-top:18px}.hero-art.profile-visual:before{width:min(72vw,250px)}.hero-art.profile-visual img{width:min(57vw,200px);height:248px;border-width:6px;border-radius:120px 120px 14px 14px}}.hero h1 span{font-size:1.14em}
 @media(max-width:760px){
  .book-intro.editorial-opening{grid-template-columns:minmax(0,1fr) 92px;grid-template-areas:"index index" "copy cover";align-items:start;gap:16px;margin:8px auto 24px;padding:20px 16px}
  .book-intro.editorial-opening .opening-index{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"author year";align-items:center;gap:8px;padding:0 0 12px;border-right:0;border-bottom:1px solid #ead5dc}
@@ -314,10 +315,9 @@ if(location.hash==='#livro-poema-mar')openPoemPage(false);
 <script>
 const heroName=document.querySelector('.hero h1 span');
 if(heroName)heroName.textContent='Debora.';
-const authorNote=document.createElement('section');
+const authorNote=document.createElement('p');
 authorNote.className='author-note';
-authorNote.setAttribute('aria-label','Sobre a autora do blog');
-authorNote.innerHTML='<img src="imagens/debora-perfil.jpg" alt="Débora Lubacheviski" loading="lazy"><div class="author-note-copy"><div class="author-note-heading"><strong>Debora Lubacheviski</strong><span>Estudante do SESI · 3º ano</span></div><p>Atualmente, estou cursando o terceiro ano do Ensino Médio no SESI. Gosto muito de ler, praticar esportes e aprender coisas novas. No futuro, pretendo cursar Direito, uma área que desperta meu interesse e na qual desejo construir minha carreira profissional.</p></div>';
+authorNote.innerHTML='<strong>Debora Lubacheviski</strong><span>Estudante do SESI · 3º ano</span>';
 document.querySelector('.hero .subtitle')?.after(authorNote);
 </script>
 <style>
